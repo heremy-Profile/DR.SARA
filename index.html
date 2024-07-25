@@ -244,150 +244,190 @@
             opacity: 1;
         }
 
+        .social-icons .instagram-link, .social-icons .whatsapp-link {
+            position: relative;
+            display: inline-block;
+            background: #000;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .social-icons .instagram-link::before, .social-icons .whatsapp-link::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons .instagram-link::before {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') no-repeat center center;
+        }
+
+        .social-icons .instagram-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-icons .whatsapp-link::before {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center center;
+        }
+
+        .social-icons .whatsapp-link:hover::before {
+            opacity: 1;
+        }
+
         footer {
             background: rgba(0, 0, 0, 0.8);
             color: #e0e0e0;
             text-align: center;
-            padding: 20px 0;
-            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.8);
+                    padding: 20px 0;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    footer a {
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    .scroll-up-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ffcc00;
+        color: #111;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .scroll-up-btn:hover {
+        background: #ffb700;
+        transform: scale(1.1);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .section-ar {
+        direction: rtl;
+        text-align: right;
+    }
+
+    .section-ar h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #ffcc00;
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .section-ar p, .section-ar ul {
+        font-size: 1em;
+        line-height: 1.8;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-ar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .section-ar ul li {
+        background: #1a1a1a;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .section-ar ul li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 1.5em;
         }
 
-        footer a {
-            color: #ffcc00;
-            text-decoration: none;
+        .header {
+            height: 40vh;
         }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .scroll-up-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ffcc00;
-            color: #111;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .header-content h1 {
             font-size: 2em;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
         }
 
-        .scroll-up-btn:hover {
-            background: #ffb700;
-            transform: scale(1.1);
+        .profile-img {
+            width: 100px;
+            height: 100px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section h2 {
+            font-size: 1.5em;
         }
 
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .section p, .section ul {
+            font-size: 0.9em;
         }
 
-        .section-ar {
-            direction: rtl;
-            text-align: right;
+        .contact-info i {
+            font-size: 1.2em;
         }
 
-        .section-ar h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #ffcc00;
-            position: relative;
-            z-index: 2;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeInUp 1s ease-out;
+        .contact-info a {
+            font-size: 0.9em;
         }
 
-        .section-ar p, .section-ar ul {
-            font-size: 1em;
-            line-height: 1.8;
-            position: relative;
-            z-index: 2;
+        .social-icons a {
+            font-size: 1.5em;
         }
-
-        .section-ar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .section-ar ul li {
-            background: #1a1a1a;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .section-ar ul li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 1);
-        }
-
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.5em;
-            }
-
-            .header {
-                height: 40vh;
-            }
-
-            .header-content h1 {
-                font-size: 2em;
-            }
-
-            .profile-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .section h2 {
-                font-size: 1.5em;
-            }
-
-            .section p, .section ul {
-                font-size: 0.9em;
-            }
-
-            .contact-info i {
-                font-size: 1.2em;
-            }
-
-            .contact-info a {
-                font-size: 0.9em;
-            }
-
-            .social-icons a {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <nav class="navbar">
@@ -419,7 +459,7 @@
         </section>
 
         <section class="section section-ar">
-            <h2>عن د. سارة حسن الفقي</h2>
+            <h2>عن د. سارة حسن الفكي</h2>
             <p>تخرجت من جامعة سيغيد-المجر <br>زمالة الكلية الملكية لأطباء النساء والتوليد-المملكة المتحدة<br> زمالة الكلية الأمريكية لأمراض النساء والتوليد-الولايات المتحدة الأمريكية <br>دبلوم الدراسات العليا في أمراض النساء التجميلية <br>دبلوم في التوليد وأمراض النساء الموجات فوق الصوتية</p>
             <p>عشرون عاماً في الممارسة العملية من ذوي الخبرة العالية في حالات الحمل عالية الخطورة وإدارة المضاعفات وحالات الطوارئ والأمراض النسائية الاختيارية. التطورات الحديثة في أمراض النساء التجميلية باستخدام الأجهزة القائمة على الطاقة، والحشو، والبلازما، والإجراءات الجراحية التصحيحية والتجميلية</p>
         </section>
@@ -449,11 +489,25 @@
                 <i class="fas fa-globe"></i>
                 <a href="http://www.ak-hospital.com" target="_blank">www.ak-hospital.com</a>
             </div>
+            <div>
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/971563525014" target="_blank">+971 56 352 5014</a>
+            </div>
+            <div>
+                <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/drsaraelfaki_obgyn?igshid=MWlubTN5MG1yenV3ZA&utm_source=qr" target="_blank">Instagram</a>
+            </div>
         </section>
 
         <div class="social-icons">
             <a href="https://www.tiktok.com/@drsaraelfakiobgyn?_t=8oEKmmtQvdI&_r=1" target="_blank" class="tiktok-link">
                 <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/drsaraelfaki_obgyn?igshid=MWlubTN5MG1yenV3ZA&utm_source=qr" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/971563525014" target="_blank" class="whatsapp-link">
+                <i class="fab fa-whatsapp"></i>
             </a>
         </div>
     </div>
@@ -465,11 +519,13 @@
     <button class="scroll-up-btn" onclick="scrollToTop()">
         <i class="fas fa-chevron-up"></i>
     </button>
-
-    <script>
+      <script>
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
 </html>
+
+   
+ 
