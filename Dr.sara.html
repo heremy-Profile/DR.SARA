@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sara Hassan Elfaki - Personal Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-brand {
+            color: #ffcc00;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .navbar-brand:hover {
+            color: #fff;
+        }
+
+        .header {
+            background: url('unnamed.jpg') no-repeat center center;
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 5em;
+            margin: 0;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+            letter-spacing: 4px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-img {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            border: 10px solid #ffcc00;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .section::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(135deg, #ffcc00, #ffb700);
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+
+        .section h2 {
+            font-size: 4em;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section p, .section ul {
+            font-size: 1.5em;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            background: #1a1a1a;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .contact-info div {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-info div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+        }
+
+        .contact-info i {
+            font-size: 1.8em;
+            color: #ffcc00;
+            margin-right: 15px;
+        }
+
+        .contact-info a {
+            color: #e0e0e0;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-icons a {
+            color: #ffcc00;
+            font-size: 3em;
+            margin: 0 25px;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        .social-icons .tiktok-link {
+            position: relative;
+            display: inline-block;
+            background: #000;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .social-icons .tiktok-link::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/TikTok_logo_2021.svg') no-repeat center center;
+            background-size: contain;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons .tiktok-link:hover::before {
+            opacity: 1;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #e0e0e0;
+            text-align: center;
+            padding: 30px 0;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .scroll-up-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffcc00;
+            color: #111;
+            border: none;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .scroll-up-btn:hover {
+            background: #ffb700;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section-ar {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .section-ar h2 {
+            font-size: 4em;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section-ar p, .section-ar ul {
+            font-size: 1.5em;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-ar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section-ar ul li {
+            background: #1a1a1a;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-ar ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Dr. Sara Hassan Elfaki</a>
+    </nav>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to Dr. Sara Hassan Elfaki's Profile</h1>
+        </div>
+        <div class="profile-img">
+            <img src="E:/G/unnamed.jpg" alt="Dr. Sara Hassan Elfaki">
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>About Dr. Sara Hassan Elfaki</h2>
+            <p>Dr. Sara Hassan Elfaki, MD, FRCOG, FACOG, graduated from Szeged University, Hungary. She holds fellowships from the Royal College of Obstetricians and Gynecologists (UK) and the American College of Obstetrics and Gynecology (USA). Dr. Elfaki also has a postgraduate diploma in Cosmetic Gynecology and a diploma in Obstetric and Gynecology Ultrasound.</p>
+            <p>With over 20 years of practice, she is highly experienced in managing high-risk pregnancies, handling complications, and performing both emergency and elective gynecological procedures. Dr. Elfaki is also proficient in recent advances in cosmetic gynecology, including the use of energy-based devices, fillers, plasma, and both corrective and cosmetic surgical procedures.</p>
+        </section>
+
+        <section class="section">
+            <h2>Publications</h2>
+            <ul>
+                <li>Radio Frequency in Cosmetic Gynecology Literature Review 2018-2023</li>
+                <li>Genitourinary Syndrome of Menopause: Exploring History Updates and Treatment</li>
+            </ul>
+        </section>
+
+        <section class="section section-ar">
+            <h2>عن د. سارة حسن الفقي</h2>
+            <p>تخرجت من جامعة سيغيد-المجر <br>زمالة الكلية الملكية لأطباء النساء والتوليد-المملكة المتحدة<br> زمالة الكلية الأمريكية لأمراض النساء والتوليد-الولايات المتحدة الأمريكية <br>دبلوم الدراسات العليا في أمراض النساء التجميلية <br>دبلوم في التوليد وأمراض النساء الموجات فوق الصوتية</p>
+            <p>عشرون عاماً في الممارسة العملية من ذوي الخبرة العالية في حالات الحمل عالية الخطورة وإدارة المضاعفات وحالات الطوارئ والأمراض النسائية الاختيارية. التطورات الحديثة في أمراض النساء التجميلية باستخدام الأجهزة القائمة على الطاقة، والحشو، والبلازما، والإجراءات الجراحية التصحيحية والتجميلية</p>
+        </section>
+
+        <section class="section section-ar">
+            <h2>المنشورات</h2>
+            <ul>
+                <li>تردد الراديو في مراجعة أدبيات أمراض النساء التجميلية 2018-2023</li>
+                <li>متلازمة الجهاز البولي التناسلي لانقطاع الطمث: استكشاف تحديثات التاريخ والعلاج</li>
+            </ul>
+        </section>
+
+        <section class="section contact-info">
+            <div>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+97137133249">+971 371 332 49</a>
+            </div>
+            <div>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:sfaki@ak-hospital.com">sfaki@ak-hospital.com</a>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                PO Box: Al Ain, Abu Dhabi - P.O.Box: 88206
+            </div>
+            <div>
+                <i class="fas fa-globe"></i>
+                <a href="http://www.ak-hospital.com" target="_blank">www.ak-hospital.com</a>
+            </div>
+        </section>
+
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@drsaraelfakiobgyn?_t=8oEKmmtQvdI&_r=1" target="_blank" class="tiktok-link">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dr. Sara Hassan Elfaki. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <button class="scroll-up-btn" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
